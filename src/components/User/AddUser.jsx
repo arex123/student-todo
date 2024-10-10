@@ -5,10 +5,13 @@ import Card from "../UI/Card";
 import ButtonGroup from "../UI/Button";
 
 const AddUser = () => {
-  const [username, setUsername] = useState();
-  const [age, setAge] = useState();
+  const [username, setUsername] = useState("");
+  const [age, setAge] = useState("");
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    if(username.trim().length==0 || age.trim().length==0 || age.trim()<=0){
+      return
+    }
     console.log(username)
     console.log(age)
     setUsername("")
