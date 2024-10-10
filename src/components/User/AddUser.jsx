@@ -4,7 +4,7 @@ import { Input } from "@chakra-ui/react";
 import Card from "../UI/Card";
 import ButtonGroup from "../UI/Button";
 
-const AddUser = () => {
+const AddUser = (props) => {
   const [username, setUsername] = useState("");
   const [age, setAge] = useState("");
   const handleFormSubmit = (e) => {
@@ -12,6 +12,7 @@ const AddUser = () => {
     if(username.trim().length==0 || age.trim().length==0 || age.trim()<=0){
       return
     }
+    props.onNewUser(username,age)
     console.log(username)
     console.log(age)
     setUsername("")
